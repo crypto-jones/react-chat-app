@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import UsernameForm from './components/UsernameForm';
+import ChatScreen from './components/ChatScreen';
 import './App.css';
 
 class App extends Component {
   state = {
-    currentUsername: ''
+    currentUsername: '',
+    currentScreen: 'WhatIsYourUsernameScreen'
   };
 
   onUsernameSubmitted = username => {
@@ -17,19 +19,28 @@ class App extends Component {
     })
       .then(response => {
         this.setState({
-          currentUsername: username
+          currentUsername: username,
+          currentScreen: 'ChatScreen'
         });
       })
       .catch(error => console.error('error', error));
   };
 
   render() {
-    return (
-      <div className="App">
-        <h1>Chat App</h1>
-        <UsernameForm onSubmit={this.onUsernameSubmitted} />
-      </div>
-    );
+    if (this.state.currentScreen === 'WhatIsYourUsernameScreen') {
+      return (
+        <div className="App">
+          <UsernameForm className="App" onSubmit={this.onUsernameSubmitted} />
+        </div>
+      );
+    }
+    if (this.state.currentScreen === 'ChatScreen') {
+      return (
+        <div className="App">
+          <ChatScreen currentUsername={this.state.currentUsername} />
+        </div>
+      );
+    }
   }
 }
 
