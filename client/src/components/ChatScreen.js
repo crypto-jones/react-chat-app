@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Chatkit from '@pusher/chatkit';
-import INSTANCE_LOCATER from '../credentials';
+import MessageList from './MessageList';
+import { INSTANCE_LOCATER, ROOM_ID } from '../credentials';
 
 class ChatScreen extends Component {
   state = {
-    currentUser: {}
+    currentUser: {},
+    currentRoom: {},
+    messages: []
   };
 
   componentDidMount = () => {
@@ -20,6 +23,20 @@ class ChatScreen extends Component {
       .connect()
       .then(currentUser => {
         this.setState({ currentUser });
+        return currentUser.subscribeToRoom({
+          roomId: ROOM_ID,
+          messageLimit: 100,
+          hooks: {
+            onNewMessage: message => {
+              this.setState({
+                messages: [...this.state.messages, message]
+              });
+            }
+          }
+        });
+      })
+      .then(currentRoom => {
+        this.setState({ currentRoom });
       })
       .catch(error => console.error('error', error));
   };
@@ -57,7 +74,10 @@ class ChatScreen extends Component {
             <h2>Who's online PLACEHOLDER</h2>
           </aside>
           <section style={styles.chatListContainer}>
-            <h2>Chat PLACEHOLDER</h2>
+            <MessageList
+              messages={this.state.messages}
+              style={styles.chatList}
+            />
           </section>
         </div>
       </div>
