@@ -22,7 +22,9 @@ class UsernameForm extends Component {
         marginLeft: 50,
         marginRight: 50,
         padding: 20,
-        border: '3px solid black'
+        borderRadius: 20,
+        background: '#FFFFFF',
+        boxShadow: '0 1px 0 rgba(0,0,0,.25)'
       }
     };
 
@@ -33,7 +35,7 @@ class UsernameForm extends Component {
           <form onSubmit={this.onSubmit}>
             <input
               type="text"
-              placeholder="Your full name"
+              placeholder="Your Username"
               onChange={this.onChange}
             />
             <input type="submit" />

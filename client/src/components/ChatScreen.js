@@ -82,13 +82,15 @@ class ChatScreen extends Component {
       },
       chatContainer: {
         display: 'flex',
-        flex: 1
+        flex: 1,
+        border: '3px solid black',
+        backgroundColor: 'white'
       },
       whosOnlineListContainer: {
-        width: '200px',
+        width: '250px',
         flex: 'none',
         padding: 20,
-        backgroundColor: '#4D5250',
+        backgroundColor: '#1D425D',
         color: 'white'
       },
       chatListContainer: {
