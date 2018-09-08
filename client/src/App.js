@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SplitPane from 'react-split-pane';
 import UsernameForm from './components/UsernameForm';
 import ChatScreen from './components/ChatScreen';
 import './App.css';
