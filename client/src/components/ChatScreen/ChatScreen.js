@@ -21,9 +21,10 @@ class ChatScreen extends Component {
       .catch(error => console.error('error', error));
   };
 
-  sendMessage = text => {
+  sendMessage = (text, createdAt) => {
     this.state.currentUser.sendMessage({
       text,
+      createdAt,
       roomId: this.state.currentRoom.id
     });
   };

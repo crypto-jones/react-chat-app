@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
+import moment from 'moment';
+
 import './MessageList.css';
 
 class MessagesList extends Component {
@@ -23,7 +25,12 @@ class MessagesList extends Component {
           {this.props.messages.map((message, index) => (
             <li key={index} className="user-posts">
               <div>
-                <span className="sender-username">{message.senderId}</span>{' '}
+                <span className="sender-username">
+                  {message.senderId}{' '}
+                  <span className="time">
+                    {moment(message.createdAt).format('MMM D, hh:mm a ')}
+                  </span>
+                </span>{' '}
               </div>
               <p className="message">{message.text}</p>
             </li>
