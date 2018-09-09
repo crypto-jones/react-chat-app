@@ -4,7 +4,7 @@ import MessageList from '../MessageList/MessageList';
 import SendMessageForm from '../SendMessageForm/SendMessageForm';
 import TypingIndicator from '../TypingIndicator/TypingIndicator';
 import WhosOnlineList from '../WhosOnlineList/WhosOnlineList';
-import { INSTANCE_LOCATER, ROOM_ID } from '../../credentials';
+// import { INSTANCE_LOCATER, ROOM_ID } from '../../credentials';
 import './ChatScreen.css';
 
 class ChatScreen extends Component {
@@ -30,7 +30,7 @@ class ChatScreen extends Component {
 
   componentDidMount = () => {
     const chatManager = new Chatkit.ChatManager({
-      instanceLocator: INSTANCE_LOCATER,
+      instanceLocator: 'v1:us1:0cd73dc6-c3b6-4b42-8b3d-12213088621a',
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.TokenProvider({
         url: 'http://localhost:5000/authenticate'
@@ -42,7 +42,7 @@ class ChatScreen extends Component {
       .then(currentUser => {
         this.setState({ currentUser });
         return currentUser.subscribeToRoom({
-          roomId: ROOM_ID,
+          roomId: 15755461,
           messageLimit: 100,
           hooks: {
             onNewMessage: message => {
