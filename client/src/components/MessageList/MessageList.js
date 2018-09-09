@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as ReactDOM from 'react-dom';
 import moment from 'moment';
-
+import Linkify from 'react-linkify';
 import './MessageList.css';
 
 class MessagesList extends Component {
@@ -26,13 +26,21 @@ class MessagesList extends Component {
             <li key={index} className="user-posts">
               <div>
                 <span className="sender-username">
-                  {message.senderId}{' '}
+                  {message.senderId}
                   <span className="time">
                     {moment(message.createdAt).format('MMM D, hh:mm a ')}
                   </span>
                 </span>{' '}
               </div>
-              <p className="message">{message.text}</p>
+              <Linkify
+                properties={{
+                  target: '_blank',
+                  style: { color: 'blue', fontWeight: 'bold' }
+                }}
+                className="message"
+              >
+                {message.text}
+              </Linkify>{' '}
             </li>
           ))}
         </ul>
