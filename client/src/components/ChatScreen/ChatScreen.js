@@ -33,7 +33,7 @@ class ChatScreen extends Component {
       instanceLocator: 'v1:us1:0cd73dc6-c3b6-4b42-8b3d-12213088621a',
       userId: this.props.currentUsername,
       tokenProvider: new Chatkit.TokenProvider({
-        url: 'http://localhost:5000/authenticate'
+        url: 'https://server-react-chat-app.herokuapp.com/authenticate'
       })
     });
 
