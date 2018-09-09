@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Chatkit from '@pusher/chatkit';
-import MessageList from './MessageList';
-import SendMessageForm from './SendMessageForm';
-import TypingIndicator from './TypingIndicator';
-import WhosOnlineList from './WhosOnlineList';
-import { INSTANCE_LOCATER, ROOM_ID } from '../credentials';
+import MessageList from '../MessageList/MessageList';
+import SendMessageForm from '../SendMessageForm/SendMessageForm';
+import TypingIndicator from '../TypingIndicator/TypingIndicator';
+import WhosOnlineList from '../WhosOnlineList/WhosOnlineList';
+import { INSTANCE_LOCATER, ROOM_ID } from '../../credentials';
+import './ChatScreen.css';
 
 class ChatScreen extends Component {
   state = {
@@ -74,52 +75,22 @@ class ChatScreen extends Component {
   };
 
   render() {
-    const styles = {
-      container: {
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column'
-      },
-      chatContainer: {
-        display: 'flex',
-        flex: 1,
-        border: '3px solid black',
-        backgroundColor: 'white'
-      },
-      whosOnlineListContainer: {
-        width: '250px',
-        flex: 'none',
-        padding: 20,
-        backgroundColor: '#1D425D',
-        color: 'white'
-      },
-      chatListContainer: {
-        padding: 20,
-        width: '85%',
-        display: 'flex',
-        flexDirection: 'column'
-      }
-    };
-
     return (
-      <div style={styles.container}>
-        <div style={styles.chatContainer}>
-          <aside style={styles.whosOnlineListContainer}>
+      <div className="chat-screen-container">
+        <div className="chat-container">
+          <aside className="online-list-container">
             <WhosOnlineList
               currentUser={this.state.currentUser}
               users={this.state.currentRoom.users}
             />
           </aside>
-          <section style={styles.chatListContainer}>
-            <MessageList
-              messages={this.state.messages}
-              style={styles.chatList}
-            />
-            <TypingIndicator usersWhoAreTyping={this.state.usersWhoAreTyping} />
+          <section className="chat-list-container">
+            <MessageList messages={this.state.messages} />
             <SendMessageForm
               onSubmit={this.sendMessage}
               onChange={this.sendTypingEvent}
             />
+            <TypingIndicator usersWhoAreTyping={this.state.usersWhoAreTyping} />
           </section>
         </div>
       </div>

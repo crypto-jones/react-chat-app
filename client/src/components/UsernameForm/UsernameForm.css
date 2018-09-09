@@ -1,0 +1,36 @@
+.login-container {
+  height: 200px;
+  margin: 100px 50px 0 50px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #fefdfb;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.username-input {
+  height: 20px;
+  border-radius: 4px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  background: #1d425d;
+  color: white;
+  outline: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #febd29;
+  transform: scale(1.05);
+}

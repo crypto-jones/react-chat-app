@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './UsernameForm.css';
 
 class UsernameForm extends Component {
   state = {
@@ -15,30 +16,18 @@ class UsernameForm extends Component {
   };
 
   render() {
-    const styles = {
-      loginContainer: {
-        height: '200px',
-        marginTop: 100,
-        marginLeft: 50,
-        marginRight: 50,
-        padding: 20,
-        borderRadius: 20,
-        background: '#FFFFFF',
-        boxShadow: '0 1px 0 rgba(0,0,0,.25)'
-      }
-    };
-
     return (
       <div>
-        <div style={styles.loginContainer}>
-          <h2>What is your username?</h2>
-          <form onSubmit={this.onSubmit}>
+        <div className="login-container">
+          <h2>Enter a username</h2>
+          <form onSubmit={this.onSubmit} className="user-form">
             <input
+              className="username-input"
               type="text"
               placeholder="Your Username"
               onChange={this.onChange}
             />
-            <input type="submit" />
+            <button className="btn">Let's Chat!</button>
           </form>
         </div>
       </div>

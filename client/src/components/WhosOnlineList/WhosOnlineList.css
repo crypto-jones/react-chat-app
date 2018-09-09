@@ -1,0 +1,13 @@
+.online-list {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  padding: 2px 0;
+}
+
+.status-indicator {
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  margin-right: 10px;
+}

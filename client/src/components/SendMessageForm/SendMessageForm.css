@@ -1,0 +1,19 @@
+.send-form-container {
+  padding: 20px;
+  border: 1.5px solid #1d425d;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.send-form {
+  display: flex;
+}
+
+.send-input {
+  color: inherit;
+  background: none;
+  outline: none;
+  border: none;
+  flex: 1;
+  font-size: 16px;
+}

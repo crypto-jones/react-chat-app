@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import SplitPane from 'react-split-pane';
-import UsernameForm from './components/UsernameForm';
-import ChatScreen from './components/ChatScreen';
-import './App.css';
+import UsernameForm from './components/UsernameForm/UsernameForm';
+import ChatScreen from './components/ChatScreen/ChatScreen';
 
 class App extends Component {
   state = {
@@ -30,14 +28,14 @@ class App extends Component {
   render() {
     if (this.state.currentScreen === 'WhatIsYourUsernameScreen') {
       return (
-        <div className="App">
-          <UsernameForm className="App" onSubmit={this.onUsernameSubmitted} />
+        <div>
+          <UsernameForm onSubmit={this.onUsernameSubmitted} />
         </div>
       );
     }
     if (this.state.currentScreen === 'ChatScreen') {
       return (
-        <div className="App">
+        <div>
           <ChatScreen currentUsername={this.state.currentUsername} />
         </div>
       );
