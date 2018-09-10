@@ -8,6 +8,8 @@
 .users-list {
   list-style: none;
   font-family: 'Lato', sans-serif;
+  max-width: 475px;
+  overflow-wrap: break-word;
 }
 
 .user-posts {
