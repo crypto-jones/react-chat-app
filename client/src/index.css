@@ -2,7 +2,6 @@ body {
   margin: auto;
   padding: 0;
   font-family: sans-serif;
-  /* background: #bdc3c7; */
   background: linear-gradient(#bdc3c7, #314152);
   height: 100vh;
 }
@@ -10,4 +9,5 @@ body {
 .app-container {
   display: flex;
   justify-content: space-around;
+  min-width: 1400px;
 }
