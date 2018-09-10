@@ -29,6 +29,8 @@ Lastly, you will need to create a new room under your Chatkit account and includ
 
 This app can easily be converted to single screen UI by deleting the second instance of `<App />` in `client/index.js`. In the future, I plan to make the app more user friendly by adding features such as:
 
+- Login system
+- Login with Github, Facebook, etc.
 - Edit and delete posts functionality
 - Update username
 - Include a profile photo
