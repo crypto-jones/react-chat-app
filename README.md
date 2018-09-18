@@ -1,6 +1,6 @@
 ## React-Chat-App
 
-This is a splitscreen chat interface with real time chat functionality that uses the Chatkit API and database for user and post storage. The purpose of the splitscreen UI is to test out functionality in a single browser tab.
+This is simple chat interface with real time chat functionality that uses the Chatkit API and database for user and post storage.
 
 #### Tech Stack
 
@@ -27,7 +27,7 @@ Lastly, you will need to create a new room under your Chatkit account and includ
 
 #### Additions To Come & More
 
-This app can easily be converted to single screen UI by deleting the second instance of `<App />` in `client/index.js`. In the future, I plan to make the app more user friendly by adding features such as:
+In the future, I plan to make the app more user friendly by adding features such as:
 
 - Login system
 - Login with Github, Facebook, etc.
