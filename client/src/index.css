@@ -9,5 +9,5 @@ body {
 .app-container {
   display: flex;
   justify-content: space-around;
-  min-width: 1600px;
+  min-width: 825px;
 }

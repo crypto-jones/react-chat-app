@@ -10,8 +10,7 @@ class MessagesList extends Component {
     const scrollHeight = messageList.scrollHeight;
     const height = messageList.clientHeight;
     const maxScrollTop = scrollHeight - height;
-    ReactDOM.findDOMNode(messageList).scrollTop =
-      maxScrollTop > 0 ? maxScrollTop : 0;
+    messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
   };
 
   componentDidUpdate = () => {

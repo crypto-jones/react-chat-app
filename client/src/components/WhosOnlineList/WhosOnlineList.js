@@ -34,12 +34,12 @@ class WhosOnlineList extends Component {
 
 class WhosOnlineListItem extends Component {
   render() {
-    const styles = {};
     return (
       <li className="online-list">
         <div
           className="status-indicator"
           style={{
+            // TODO: conditionally apply classNames instead of using style attribute
             backgroundColor:
               this.props.presenceState === 'online' ? '#FEBD29' : '#778899'
           }}

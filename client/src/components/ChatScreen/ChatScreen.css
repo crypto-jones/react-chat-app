@@ -2,8 +2,6 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  min-width: 700px;
-  max-width: 900px;
 }
 
 .chat-container {
@@ -23,8 +21,8 @@
 
 .chat-list-container {
   padding: 20px;
-  width: 85%;
   display: flex;
+  width: 600px;
   flex-direction: column;
   background: #fefdfb;
   border-radius: 0 12px 12px 0;
