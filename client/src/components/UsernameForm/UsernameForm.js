@@ -27,7 +27,9 @@ class UsernameForm extends Component {
               placeholder="Your Username"
               onChange={this.onChange}
             />
-            <button className="btn">Let's Chat!</button>
+            <button className="btn" disabled={!this.state.username}>
+              Let's Chat!
+            </button>
           </form>
         </div>
       </div>
