@@ -34,7 +34,7 @@ class MessagesList extends Component {
               <Linkify
                 properties={{
                   target: '_blank',
-                  style: { color: 'blue', fontWeight: 'bold' }
+                  style: { color: '#006eff', fontWeight: 'bold' }
                 }}
                 className="message"
               >
