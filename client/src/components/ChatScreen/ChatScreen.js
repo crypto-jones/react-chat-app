@@ -75,6 +75,9 @@ class ChatScreen extends Component {
   };
 
   render() {
+    if (this.state.messages.length === 0) {
+      return <div className="chatscreen-loading">Loading...</div>;
+    }
     return (
       <div className="chat-screen-container">
         <div className="chat-container">

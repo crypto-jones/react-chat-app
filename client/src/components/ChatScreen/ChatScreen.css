@@ -27,3 +27,12 @@
   background: #fefdfb;
   border-radius: 0 12px 12px 0;
 }
+
+.chatscreen-loading {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 500;
+}

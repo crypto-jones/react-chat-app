@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as ReactDOM from 'react-dom';
 import moment from 'moment';
 import Linkify from 'react-linkify';
 import './MessageList.css';
